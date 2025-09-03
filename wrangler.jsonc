@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "aop",
+	"name": "siteai",
 	"compatibility_date": "2025-08-30",
 	"compatibility_flags": [
 		"nodejs_compat"
@@ -20,7 +20,7 @@
       "id": "7c15ee826d94440d96db7caeb92248f0",
       
       // Optional. Can be used to connect to a local database for local development with `wrangler dev`
-      "localConnectionString": "<LOCAL_CONNECTION_STRING_FOR_LOCAL_DEVELOPMENT_HERE>"
+      "localConnectionString": "postgresql://neondb_owner:npg_F0Lag5WZPQxG@ep-nameless-lake-adrcvmfa-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
     }
   ]
 	/**
