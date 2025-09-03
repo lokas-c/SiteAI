@@ -14,7 +14,7 @@
 		"enabled": true
 	}
 // Add this to your wrangler.jsonc
-  "hyperdrive": [
+  "hyperdrive" [
     {
       "binding": "HYPERDRIVE",
       "id": "7c15ee826d94440d96db7caeb92248f0",
