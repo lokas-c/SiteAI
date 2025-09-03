@@ -1,3 +1,4 @@
+```
 /**
  * For more details on how to configure Wrangler, refer to:
  * https://developers.cloudflare.com/workers/wrangler/configuration/
@@ -12,33 +13,45 @@
 	"pages_build_output_dir": ".vercel/output/static",
 	"observability": {
 		"enabled": true
-	}
-// Add this to your wrangler.jsonc
-  "hyperdrive" [
-    {
-      "binding": "HYPERDRIVE",
-      "id": "7c15ee826d94440d96db7caeb92248f0",
-      
-      // Optional. Can be used to connect to a local database for local development with `wrangler dev`
-      "localConnectionString": "postgresql://neondb_owner:npg_F0Lag5WZPQxG@ep-nameless-lake-adrcvmfa-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
-    }
-  ]
+	},
+	"hyperdrive": [
+		{
+			"binding": "HYPERDRIVE",
+			"id": "7c15ee826d94440d96db7caeb92248f0",
+			// Optional. Can be used to connect to a local database for local development with `wrangler dev`
+			"localConnectionString": "postgresql://neondb_owner:npg_F0Lag5WZPQxG@ep-nameless-lake-adrcvmfa-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+		}
+	],
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
 	 */
-	// "placement": { "mode": "smart" }
+	// "placement": { "mode": "smart" },
 	/**
 	 * Bindings
 	 * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
 	 * databases, object storage, AI inference, real-time communication and more.
 	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
 	 */
+	"ai": {
+		"binding": "AI"
+	},
+	"kv_namespaces": [
+		{
+			"binding": "SEO_CACHE",
+			"id": "806ec49b46b5425cab42369437df546e"
+		}
+	],
 	/**
 	 * Environment Variables
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
 	 */
-	// "vars": { "MY_VARIABLE": "production_value" }
+	"vars": {
+		"CLOUDFLARE_ACCOUNT_ID": "24cc78009dd62673b42a914ab4a117c2",
+		"CLOUDFLARE_API_TOKEN": "nSpajVg6zKKgvUTqvZhTppJJzFq4ZqVxNNQ4Q9j1",
+		"GOOGLE_API_KEY": "AIzaSyATAHv5-QAlj-qdEnclocnmAlvh5Xot9j0",
+		"NEXT_PUBLIC_BASE_URL": "https://siteai.pages.dev"
+	},
 	/**
 	 * Note: Use secrets to store sensitive data.
 	 * https://developers.cloudflare.com/workers/configuration/secrets/
@@ -47,10 +60,11 @@
 	 * Static Assets
 	 * https://developers.cloudflare.com/workers/static-assets/binding/
 	 */
-	// "assets": { "directory": "./public/", "binding": "ASSETS" }
+	// "assets": { "directory": "./public/", "binding": "ASSETS" },
 	/**
 	 * Service Bindings (communicate between multiple Workers)
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
 	 */
 	// "services": [{ "binding": "MY_SERVICE", "service": "my-service" }]
 }
+```
