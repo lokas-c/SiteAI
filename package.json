@@ -1,5 +1,5 @@
 {
-	"name": "aop",
+	"name": "siteai",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
@@ -14,7 +14,9 @@
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^5.2.1",
-		"ai": "latest",
+		"@vercel/analytics": "latest",
+		"@vercel/og": "latest",
+		"@cloudflare/pages-plugin-turnstile": "latest",
 		"@radix-ui/react-accordion": "^1.2.12",
 		"@radix-ui/react-alert-dialog": "^1.1.15",
 		"@radix-ui/react-aspect-ratio": "^1.1.7",
